@@ -1,6 +1,6 @@
 import re
 
-with open('C:/Users/eradi/Desktop/pp2/pp2-labs/lab05/row.txt', 'r', encoding='utf-8') as f:
+with open('/Users/akbotabagdauletkyzy/Desktop/row.txt', 'r', encoding='utf-8') as f:
     row = f.read()
     
 print(row)
