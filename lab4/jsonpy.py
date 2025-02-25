@@ -1,6 +1,6 @@
 import json
 
-with open("C:/Users/eradi/Desktop/pp2/pp2-labs/lab04/sample-data.json", "r") as f:
+with open("/Users/akbotabagdauletkyzy/Desktop/PP2025/lab4/sample-data.json", "r") as f:
     data = json.load(f)
 
 print(f"\nInterface Status \n {"=" * 70}")
