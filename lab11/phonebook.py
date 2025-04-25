@@ -3,7 +3,7 @@ import csv
 from tabulate import tabulate 
 
 conn = psycopg2.connect(host="localhost", dbname="lab10", user="postgres",
-                        password="Almaty250505", port=5433)
+                        password=600654, port=5432)
 
 cur = conn.cursor()
 
@@ -14,6 +14,11 @@ cur.execute("""CREATE TABLE IF NOT EXISTS phonebook (
       phone VARCHAR(255) NOT NULL
 )
 """)
+cur.execute("""
+    ALTER TABLE phonebook
+      ADD COLUMN IF NOT EXISTS user_id SERIAL PRIMARY KEY
+""")
+conn.commit()
 
 def insert_data():
     print('Type "csv" or "con" to choose option between uploading csv file or typing from console: ')
@@ -51,7 +56,7 @@ def query_data():
     print(tabulate(rows, headers=["ID", "Name", "Surname", "Phone"]))
 
 def display_data():
-    cur.execute("SELECT * from phonebook;")
+    cur.execute("SELECT user_id, name, surname, phone FROM phonebook;")
     rows = cur.fetchall()
     print(tabulate(rows, headers=["ID", "Name", "Surname", "Phone"], tablefmt='fancy_grid'))
 
