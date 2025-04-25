@@ -16,7 +16,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS phonebook (
 
 )
 """)
-#filepath = "/Users/bekzatshaiyrgozha/Documents/PP2/lab10/student.csv"  
+#filepath = "/Users/akbotabagdauletkyzy/Desktop/PP2025/lab10/student.csv"  
 #with open(filepath, 'r') as f:
    
 #    next(f)
